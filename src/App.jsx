@@ -1,10 +1,9 @@
-import React from 'react';
-import { useState } from 'react'; // import useState from React
+import React, { useState } from "react"; // import useState from React
 
-import Gallery from './components/Gallery';
+import Gallery from "./components/Gallery";
 // import Gallery component to show tours
 
-import '.styles/styles.css'; // import styles
+import './styles/styles.css'; // import styles
 
 function App() {
   const [tours, setTours] = useState([]); // local state to hold tours data
@@ -20,7 +19,7 @@ function App() {
       <Gallery tours={tours} setTours={setTours} onRemove={removeTour} /> {/* render Gallery component */}
     </main>
     );
-}
+  }
 }
 
 export default App;
