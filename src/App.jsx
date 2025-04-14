@@ -12,6 +12,7 @@ function App() {
 
     setTours((tours) => tours.filter((tour) => tour.id !== id)); 
     // remove tour from list
+  };
 
   return (
     <main>
@@ -20,7 +21,6 @@ function App() {
     </main>
     );
   }
-}
 
 export default App;
 // export the App
