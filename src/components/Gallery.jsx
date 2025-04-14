@@ -3,7 +3,7 @@ import TourCard from './TourCard'; // import TourCard component
 
 //TourCard fetches tours and renders list
 
-const Gallery = (tours, setTours, onRemove) => {
+const Gallery = ({tours, setTours, onRemove}) => {
     //local state to hold tours data
     const [loading, setLoading] = useState(true); 
     // loading state
@@ -14,28 +14,24 @@ const Gallery = (tours, setTours, onRemove) => {
     const fetchTours = async () => {
             try {
                 const response = await fetch('https://course-api.com/react-tours-project'
+         ); // fetch data from API
 
-                ); // fetch data from API
+            const data = await response.json();
+            setTours(data); // set tours data to state
 
-                const data = await response.json();
-                setTours(data); // set tours data to state
+        } catch (error) {
+            console.error('Error fetching tours:', error); // log error
 
-            } catch (error) {
-                console.error('Error fetching tours:', error); // log error
-
-                setError(true); // set error to true
-
-                setLoading(false); // set loading to false
+            setError(true); // set error to true
 
         } finally {
             setLoading(false); // set loading to false
         }
-       
     };
 
     useEffect(() => {
         fetchTours(); // call fetchTours function on component mount
-    }   , []); // empty dependency array to run only once   
+    }, []); // empty dependency array to run only once   
 
     // render loading state
 
@@ -47,7 +43,7 @@ const Gallery = (tours, setTours, onRemove) => {
         );
     }
 
-    //reder error state
+    //render error state
     if (error) {
         return (
             <div className="error">
