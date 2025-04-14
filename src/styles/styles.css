@@ -1,0 +1,68 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.app-title {
+    font-size: 24px;
+    color: #333;
+}
+
+.gallery {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 2rem;
+padding: 1rem;
+}
+
+.tour-card {
+    background: white;
+    border-radius: 10px;
+    max-width: 400px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+
+  .tour-card img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.tour-card h2,
+.tour-card p {
+  margin: 1rem;
+}
+.tour-card .price {
+    color: #49a6e9;
+    font-weight: bold;
+  }
+  
+  button {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #f28b82;
+    color: white;
+    transition: background 0.2s;
+  }
+  
+  button:hover {
+    background-color: #7866e0;
+  }
+  
+  .loading,
+  .error {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .gallery {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
