@@ -36,8 +36,8 @@ const Gallery = ({tours, setTours, onRemove}) => {
 
     if (loading) {
         return (
-            <div className="loading">
-                <h2>Loading...</h2> {/* loading message */}
+            <div className="loading"> 
+                <h2>Loading...</h2> {/* displays loading message */}
             </div>
         );
     }
@@ -46,7 +46,7 @@ const Gallery = ({tours, setTours, onRemove}) => {
     if (error) {
         return (
             <div className="error">
-                <h2>Something went wrong...</h2> {/* error message */}
+                <h2>Something went wrong...</h2> {/* displays error message */}
             </div>
         );
     }
